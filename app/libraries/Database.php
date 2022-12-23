@@ -37,6 +37,10 @@
     public function query($sql){
       $this->stmt = $this->dbh->prepare($sql);
     }
+    public function getdbh(){
+      
+      return $this->dbh;
+    }
 
     // Bind values
     public function bind($param, $value, $type = null){
@@ -63,7 +67,9 @@
     public function execute(){
       return $this->stmt->execute();
     }
-
+    public function execute2(){
+      return $this->stmt->execute();
+    }
     // Get result set as array of objects
     public function resultSet(){
       $this->execute();

@@ -16,7 +16,12 @@
             <a class="nav-link" href="<?php echo URLROOT; ?>/pages/contact">CONTACT</a>
           </li>
         </ul>
-     
+        <?php
+        if (isset($_SESSION['user_id'])) :?>
+                   <li class="nav-item ">
+                  <a class="nav-link" href="<?php echo URLROOT.'/users/logout'; ?>">deconnexion</a>
+              </li>
+                <?php else: ?> 
         
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
@@ -25,6 +30,7 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo URLROOT; ?>/users/login">Login</a>
           </li>
+          <?php endif; ?> 
          
         </ul>
       </div>

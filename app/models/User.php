@@ -9,7 +9,7 @@ class User
     // register user
     public function register($data)
     {
-        $this->db->query("INSERT INTO `users`(`name`, `email`, `password`) VALUES (:name,:email,:password)");
+        $this->db->query("INSERT INTO `user`(`name`, `email`, `password`) VALUES (:name,:email,:password)");
         // bind value
         $this->db->bind(':email', $data['email']);
         $this->db->bind(':name', $data['name']);
@@ -25,7 +25,7 @@ class User
       // login user
       public function login($email,$password)
       {
-        $this->db->query('SELECT * FROM `users` WHERE `email` = :email');
+        $this->db->query('SELECT * FROM `user` WHERE `email` = :email');
         $this->db->bind(':email',$email);
         $row=$this->db->single();
         $hashed_password = $row->password;
@@ -39,7 +39,7 @@ class User
     // find user by email
     public function findUserByEmail($email)
     {
-        $this->db->query('SELECT * FROM users WHERE email = :email');
+        $this->db->query('SELECT * FROM user WHERE email = :email');
         $this->db->bind(':email', $email);
 
         $row = $this->db->single();
