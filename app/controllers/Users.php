@@ -150,10 +150,16 @@ class Users extends Controller
 
     public function createUserSession($user)
     {
-        $_SESSION['user_id'] = $user->id;
+        $_SESSION['user_id'] = $user->id_u;
         $_SESSION['user_email'] = $user->email;
         $_SESSION['user_name'] = $user->name;
-        redirect('admin');
+        $_SESSION['user_role'] = $user->role;
+        if ($_SESSION['user_role']==1) {
+            redirect('admin');
+        }else{
+            redirect('client');
+        }
+
     }
     public function logout()
     {
