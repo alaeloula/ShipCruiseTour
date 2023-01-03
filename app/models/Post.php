@@ -36,12 +36,12 @@ class Post
             return false;
         }
     }
-    public function addPostblaimage($data)
+    public function addPort($data)
     {
-        $this->db->query('INSERT INTO `product`( `title`, `price`) VALUES(:title, :price)');
+        $this->db->query('INSERT INTO `port`(`id_p`, `nom`, `pays`) VALUES (NULL,:nom,:pays)');
         // Bind values
-        $this->db->bind(':title', $data['title']);
-        $this->db->bind(':user_id', $data['price']);
+        $this->db->bind(':nom', $data['nom']);
+        $this->db->bind('pays', $data['pays']);
 
 
         // Execute

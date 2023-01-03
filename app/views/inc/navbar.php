@@ -25,7 +25,7 @@
           <a class="nav-link" href="<?php echo URLROOT . '/users/logout'; ?>">deconnexion</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo URLROOT . '/admin/'; ?>">admin</a>
+          <a class="nav-link" href="<?php echo URLROOT . '/admin/ '; ?>">admin</a>
         </li>
         </ul>
       <?php else : ?>
