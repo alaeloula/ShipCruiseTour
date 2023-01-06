@@ -3,6 +3,7 @@ require APPROOT . '/views/inc/header.php';
 echo "admin : " . $_SESSION['user_name'];
 flash('portadd_message');
 flash('typeadd_message');
+flash('cruise_message');
 ?>
 
 <div class="container">
@@ -13,7 +14,7 @@ flash('typeadd_message');
         <div class="col-lg-4 col-sm-6 mb-4">
             <!-- Portfolio item 1-->
             <div class="portfolio-item">
-                <a class="portfolio-link" data-bs-toggle="modal" href="">
+                <a class="portfolio-link" data-bs-toggle="modal" href="<?php echo URLROOT ?>/admin/addCroisiere">
                     <div class="portfolio-hover">
                          <a href="<?php echo URLROOT ?>/admin/addCroisiere"><div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div></a>
                     </div>
